@@ -1,0 +1,33 @@
+<div class="line-break"></div>
+<div class="container">
+  <div class="user-block">
+    <h2 class="heading">Data Binding</h2>
+    <label>First Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="usersFirstName" ng-required="">
+    <label>Last Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="usersLastName" ng-required="">
+    <label>Email:</label>
+    <input type="email" class="form-control" [(ngModel)]="usersEmail" ng-required="">
+    <label>Password:</label>
+    <input type="Password" class="form-control" [(ngModel)]="usersPassword" ng-required="">
+    <br/>
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div
+        class="panel panel-default"
+        *ngFor="let element of userElements">
+        <div class="panel-heading">{{ element.firstName }}</div>
+        <div class="panel-heading">{{ element.lastName }}</div>
+        <div class="panel-heading">{{ element.Email }}</div>
+        <div class="panel-body">
+          <p>
+            <strong *ngIf="element.type === 'userserver'" style="color: green">{{ element.Password }}</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>

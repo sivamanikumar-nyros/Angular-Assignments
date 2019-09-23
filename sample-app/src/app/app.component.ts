@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'my-first-app';
-  title ='Angular-8'
+  title: string = 'My First Sample';
+  Heading: string = '***';
+  getResult(){
+  	return this.Heading;
+  }
 }

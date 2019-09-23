@@ -1,0 +1,267 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: lightpink;
+    height: 40px;
+    width: 500px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(black, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 83%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: 100vh;
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .terminal {
+    position: relative;
+    width: 86%;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal p {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+  .content{
+    background-color: #f7e6e6;
+    padding: 50px;
+    border: 10px groove black;
+  }
+
+</style>
+
+<div class="content" role="main">
+
+  <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+
+    <app-project></app-project>
+    <span>{{ title }} Angular Application{{ getResult() }}</span>
+
+  </div>
+
+  <!-- Next Steps -->
+  <h2>Job interview</h2>
+  <p>The impressions interviewers form early on may affect how they view the person in a later phase. </p>
+
+  <input type="hidden" #selection>
+
+  <div class="card-container">
+    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Preinterview phase</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Interview phase</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Postinterview phase</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'test'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>For interviewees</span>
+    </div>
+  </div>
+
+  <!-- Terminal -->
+  <div class="terminal" [ngSwitch]="selection.value">
+      <p *ngSwitchDefault>
+        <b>Preinterview phase:</b> <br/> <br/> The preinterview phase encompasses the information available to the interviewer beforehand (e.g., resumes, test scores, social networking site information) and the perceptions interviewers form about applicants from this information prior to the actual face-to-face interaction between the two individuals. In this phase, interviewers are likely to already have ideas about the characteristics that would make a person ideal or qualified for the position.Interviewers also have information about the applicant usually in the form of a resume, test scores, or prior contacts with the applicant. Interviewers then often integrate information that they have on an applicant with their ideas about the ideal employee to form a preinterview evaluation of the candidate. In this way, interviewers typically have an impression even before the actual face-to-face interview interaction. Nowadays with recent technological advancements, interviewers have an even larger amount of information available on some candidates. For example, interviewers can obtain information from search engines (e.g. Google, Bing, Yahoo), blogs, and even social networks (e.g. Linkedin, Facebook, Twitter). While some of this information may be job-related, some of it may not be. In some cases, a review of Facebook may reveal undesirable behaviors such as drunkenness or drug use. Despite the relevance of the information, any information interviewers obtain about the applicant before the interview is likely to influence theirimpression of the candidate. Furthermore, researchers have found that what interviewers think about the applicant before the interview (preinterview phase) is related to how they evaluate the candidate after the interview, despite how the candidate may have performed during the interview.
+      </p>
+      <p *ngSwitchCase="'material'">
+        <b>Interview phase:</b><br/><br/> 
+        The interview phase entails the actual conduct of the interview, the interaction between the interviewer and the applicant. Initial interviewer impressions about the applicant before the interview may influence the amount of time an interviewer spends in the interview with the applicant, the interviewer's behavior and questioning of the applicant, and the interviewer's postinterview evaluations. Preinterview impressions also can affect what the interviewer notices about the interviewee, recalls from the interview, and how an interviewer interprets what the applicant says and does in the interview.
+
+        As interviews are typically conducted face-to-face, over the phone, or through video conferencing (e.g. Skype), they are a social interaction between at least two individuals. Thus, the behavior of the interviewer during the interview likely "leaks" information to the interviewee. That is, you can sometimes tell during the interview whether the interviewer thinks positively or negatively about you.Knowing this information can actually affect how the applicant behaves, resulting in a self-fulfilling prophecy effect. For example, interviewees who feel the interviewer does not think they are qualified may be more anxious and feel they need to prove they are qualified. Such anxiety may hamper how well they actually perform and present themselves during the interview, fulfilling the original thoughts of the interviewer. Alternatively, interviewees who perceive an interviewer believes they are qualified for the job may feel more at ease and comfortable during the exchange, and consequently actually perform better in the interview. It should be noted again, that because of the dynamic nature of the interview, the interaction between the behaviors and thoughts of both parties is a continuous process whereby information is processed and informs subsequent behavior, thoughts, and evaluations. 
+      </p>
+      <p *ngSwitchCase="'dependency'">
+        <b>Postinterview phase:</b><br/><br/> After the interview is conducted, the interviewer must form an evaluation of the interviewee's qualifications for the position. The interviewer most likely takes into consideration all the information, even from the preinterview phase, and integrates it to form a postinterview evaluation of the applicant. In the final stage of the interview process, the interviewer uses his/her evaluation of the candidate (i.e., in the form of interview ratings or judgment) to make a final decision. Sometimes other selection tools (e.g., work samples, cognitive ability tests, personality tests) are used in combination with the interview to make final hiring decisions; however, interviews remain the most commonly used selection device in North America.
+      </p>
+      <p *ngSwitchCase="'test'">
+        <b>For interviewees:</b><br/><br/> Although the description of the interview process above focuses on the perspective of the interviewer, job applicants also gather information on the job and/or organization and form impressions prior to the interview. The interview is a two-way exchange and applicants are also making decisions about whether the company is a good fit for them. Essentially, the process model illustrates that the interview is not an isolated interaction, but rather a complex process that begins with two parties forming judgments and gathering information, and ends with a final interviewer decision. 
+      </p>
+  </div>
+  <app-address-card name="Siva"></app-address-card>
+</div>

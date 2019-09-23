@@ -9,7 +9,9 @@ export class GameControlComponent implements OnInit {
   @Output() intervalFired = new EventEmitter<number>();
   interval;
   lastNumber = 0;
+  myText: string = "Property Binding";
 
+  public greeting = "";
   constructor() { }
 
   ngOnInit() {
@@ -24,5 +26,12 @@ export class GameControlComponent implements OnInit {
 
   onPauseGame() {
     clearInterval(this.interval);
+  }
+
+  onClick(event){
+    console.log('Welcome to event binding function');
+    console.log(event);
+    this.greeting = "Welcome to event binding function";
+    this.greeting = event.type;
   }
 }

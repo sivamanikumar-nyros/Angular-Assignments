@@ -1,2 +1,34 @@
 <button class="btn btn-success" (click)="onStartGame()">Start Game</button>
 <button class="btn btn-danger" (click)="onPauseGame()">Pause Game</button>
+<button class="btn btn-primary" (click)="onClick($event)">Testing</button>
+<button class="btn btn-primary" (click)="greeting='Welcome Siva'">Greeting</button>
+<button class="btn btn-success" (click)="onTyping='Welcome to Origen'">Result</button>
+{{greeting}}{{onTyping}}
+<div class="">
+	<input type="text" class="form-control sample-form" [(ngModel)]="name" >
+	<p class="sample-txt">{{name}}</p>
+	<input [value]='myText'>
+</div>
+
+<div class="col-lg-12">
+	<div class="jumbotron">
+		<input class="form-control" type="text" name="userName" [(ngModel)]="userName">
+		<input class="form-control" type="email" name="emailId" [(ngModel)]="emailId">
+		<input class="form-control" type="password" name="password" [(ngModel)]="password">
+	</div>
+</div>
+
+
+<div class="col-lg-12">
+	<div class="jumbotron">
+		<div class="col-lg-4">
+			{{userName}}
+		</div>
+		<div class="col-lg-4">
+			{{emailId}}
+		</div>
+		<div class="col-lg-4">
+			{{password}}
+		</div>
+	</div>
+</div>

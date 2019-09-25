@@ -13,8 +13,10 @@
           <td>{{ employee.EmployeeName }}</td>
           <td>{{ employee.EmployeeDesignation }}</td>
           <td>{{ employee.EmployeeAddress }}</td>
-          <td><a [routerLink]="['/edit', employee._id]" class="btn btn-primary">Edit</a></td>
-          <td><a (click) = "deleteEmployee(employee._id)" class="btn btn-danger">Delete</a>
+          <td><a [routerLink]="['/edit', employee._id]" class="btn btn-primary">
+            <img src="https://img.icons8.com/android/24/000000/edit.png"> Edit</a></td>
+          <td><a (click) = "deleteEmployee(employee._id)" class="btn btn-danger">
+          <img src="https://img.icons8.com/material/24/000000/delete-forever--v2.png"> Delete</a>
       </tr>
   </tbody>
 </table>

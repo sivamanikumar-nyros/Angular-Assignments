@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="addEmployeeForm">
+		<div class="card">
+		  <div class="card-body">
+		    <form [formGroup]="angForm" novalidate>
+		      <div class="form-group">
+		        <label class="col-md-4">Employee Name</label>
+		        <input type="text" class="form-control" 
+		          formControlName="EmployeeName" 
+		          #EmployeeName />
+		      </div>
+		      <div *ngIf="angForm.controls['EmployeeName'].invalid && (angForm.controls['EmployeeName'].dirty || angForm.controls['EmployeeName'].touched)" class="alert alert-danger">
+		        <div *ngIf="angForm.controls['EmployeeName'].errors.required">
+		          Employee Name is required.
+		        </div>
+		      </div>
+		      <div class="form-group">
+		        <label class="col-md-4">Designation</label>
+		        <input type="text" class="form-control" 
+		          formControlName="EmployeeDesignation" 
+		          #EmployeeDesignation
+		        />
+		      </div>
+		      <div *ngIf="angForm.controls['EmployeeDesignation'].invalid && (angForm.controls['EmployeeDesignation'].dirty || angForm.controls['EmployeeDesignation'].touched)" class="alert alert-danger">
+		        <div *ngIf="angForm.controls['EmployeeDesignation'].errors.required">
+		          Employee Designation is required.
+		        </div>
+		      </div>
+		      <div class="form-group">
+		        <label class="col-md-4">Address </label>
+		        <textarea class="form-control" rows = 7 cols = "5"
+		        formControlName="EmployeeAddress" 
+		        #EmployeeAddress></textarea>
+		      </div>
+		      <div *ngIf="angForm.controls['EmployeeAddress'].invalid && (angForm.controls['EmployeeAddress'].dirty || angForm.controls['EmployeeAddress'].touched)" class="alert alert-danger">
+		        <div *ngIf="angForm.controls['EmployeeAddress'].errors.required">
+		          Employee Address is required.
+		        </div>
+		      </div>
+		      <div class="form-group">
+		      		<button (click) = "addEmployee(EmployeeName.value, EmployeeDesignation.value, EmployeeAddress.value)" type="submit" class="btn btn-primary"
+		      		[disabled]="angForm.pristine || angForm.invalid" >
+		      		Create Employee
+		      		</button>
+		  		</div>
+		    </form>
+		  </div>
+		</div>
+	</div>
+</div>
+

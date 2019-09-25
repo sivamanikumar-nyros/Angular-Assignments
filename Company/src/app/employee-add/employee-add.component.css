@@ -1,0 +1,11 @@
+.addEmployeeForm{
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-color: lightblue;
+	padding: 20px;
+	box-shadow: 10px 10px 5px #ccc;
+      -moz-box-shadow: 10px 10px 5px #ccc;
+      -webkit-box-shadow: 10px 10px 5px #ccc;
+      -khtml-box-shadow: 10px 10px 5px #ccc;
+}
